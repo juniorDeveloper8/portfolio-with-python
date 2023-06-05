@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'detailStile.css' %}">
+</head>
+
+<br />
+
+<div class="center">
+  <div class="card mb-3 center" style="max-width: 600px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{token.image.url}}" alt=""  class="img-fluid container"/>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <header class="row container">
+            <h2>{{token.title}}</h2>
+            <h3>{{token.url}}</h3>
+          </header >
+          <p class="card-text"><h4>{{token.descripcion}}</h4></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock  %}

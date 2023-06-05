@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<header class="row bg-black">
+<h2 style="align: center">Blog to Projects</h2>
+</header >
+  
+{% for posts  in posts %}
+  
+  <div class="row">
+    <div class="col-sm-6 mb-2 mb-sm-0">
+      <div class="card" >
+        <div class="card-body">
+          <a href="{% url 'blog:detail' posts.id %}">
+            <h5 class="card-title container">{{posts.title}}</h5>
+          </a>
+          <h3>{{posts.url}}</h3>
+          <img src="{{posts.image.url}}" alt="" class="img-fluid" />
+          <p class="card-text">{{posts.descripcion}}</p>
+          <a href="{% url 'blog:detail' posts.id %}" class="btn btn-primary" style="align-item: center" >View</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card" >
+        <div class="card-body">
+          <a href="{% url 'blog:detail' posts.id %}">
+            <h5 class="card-title container">{{posts.title}}</h5>
+          </a>
+          <h3>{{posts.url}}</h3>
+          <img src="{{posts.image.url}}" alt="" class="img-fluid" />
+          <p class="card-text">{{posts.descripcion}}</p>
+          <a href="{% url 'blog:detail' posts.id %}" class="btn btn-primary" style="align-item: center" >View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock  %}

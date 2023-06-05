@@ -1,0 +1,18 @@
+body {
+  background: #141212;
+}
+.bg-black {
+  background: #090909;
+}
+
+.card-proyect:hover {
+  border: 1px solid #95a503;
+  cursor: pointer;
+}
+
+.container {
+  
+  position: fixed;
+  left: 25rem;
+  top: 15rem;
+}

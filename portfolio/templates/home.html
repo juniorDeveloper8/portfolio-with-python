@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+{% load static %}
+
+<header class="row bg-black">
+  <div class="col-md-4">
+    <img src="{% static 'portfolio/pages3.jpg' %}"  class="img-fluid" />
+  </div>
+  
+  <div class="col-md-8 my-auto align-item-center">
+  
+    <h2>I am <strong>Roberth Zambrano<strong></h2>
+    <p>
+      As an indie developer, I&apos;ve been spending hours and hours at my
+      desk every day. So, I&apos;ve been continuously improving my
+      workspace in order to boost my productivity. Whenever I upload new
+      content, people ask me what tools I use. So, here is a living
+      snapshot and a place to point curious developers to when I get
+      asked. Most of the links are amazon affiliate links, so I&apos;ll
+      get filthy rich if you click them and buy something.
+    </p>
+    <a 
+      href="{% static 'portfolio/Curriculum Vitae.pdf' %}" 
+      style="cursor:pointer"
+      target="_blank"
+      class="brn brn-primary brn-lg rounded-0 my-3"
+    > more about me -> </a>
+  </div>
+
+</header>
+
+
+<div class="row my-4 text-center text-light">
+
+  <h3>My Projects </h3>
+
+  {% for projects in projects %}
+
+  
+  <div class="col-md-3 p-4">
+    <div class="card bg-black card-proyect">
+      <div class="card-body">
+       
+        <h2>{{projects.tittle}}</h2>
+        <P>{{projects.description}}</P>
+        <img src="{{projects.image.url}}" alt="" class="img-fluid"/>
+      
+        {% if projects.url %}
+        <a id='desing' href="{{projects.url}}">
+          {% include './partials/_iconGithub.html' %}
+        </a>
+        {% endif %}
+    
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>
+
+
+
+{% endblock  %}
